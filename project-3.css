@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+/*------ General Page Styling ------*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	margin-top: 30px;
+	margin-left: 30px;
+	color: #fff;
+	font-weight: 300;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: #f893ea;
+	text-decoration: none;
+	font-weight: 400;
+	border: none;
+}
+
+a:hover {
+	color: #fff;
+}
+
+.floatLeft {
+	float: left;
+}
+
+.floatRight {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+/*------ Card Structure Elements ------*/
+
+#digitalCard {
+	display: none;
+}
+
+label {
+	display: block;
+}
+
+.card {
+	position: relative;
+	width: 630px;
+	height: 375px;
+	margin: 0 auto;
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
+}
+
+.front, .back {
+	padding: 30px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	border-radius: 2px;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transition: all 0.5s ease, -webkit-transform 0.5s;
+	transition: all 0.5s ease, -webkit-transform 0.5s;
+	transition: transform 0.5s, all 0.5s ease;
+	transition: transform 0.5s, all 0.5s ease, -webkit-transform 0.5s;
+	cursor: pointer;
+	
+}
+
+.front {
+	background-color: linear-gradient(to bottom, #e650e0, #8f0de6);
+	background-image: url(images/card-bg.jpg);
+}
+
+.back {
+	background: #fff url(images/pic.jpg);
+	color: #fff;
+}
+
+#digitalCard:not(:checked) ~ label > .card .front {
+	-webkit-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+
+}
+
+#digitalCard:not(:checked) ~ label > .card .front:hover {
+	box-shadow: 1px 20px 20px 5px rgba(51,51,51,.2);
+	-webkit-transform: rotateX(15deg);
+	transform: rotateX(15deg);
+}
+
+#digitalCard:not(:checked) ~ label > .card .back {
+	-webkit-transform: rotateX(-180deg);
+	transform: rotateX(-180deg);
+}
+
+
+#digitalCard:checked ~ label > .card .front {
+	-webkit-transform: rotateX(180deg);
+	transform: rotateX(180deg);
+}
+
+#digitalCard:checked ~ label > .card .back {
+	-webkit-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+}
+
+#digitalCard:checked ~ label > .card .back:hover {
+	box-shadow: 1px -20px 20px 5px rgba(51,51,51,.2);
+	-webkit-transform: rotateX(-10deg);
+	transform: rotateX(-10deg);
+}
+
+/*------ Card Front Header Elements ------*/
+
+h1, h2 {
+	font-weight: 300;
+	text-shadow: 2px 10px 8px rgba(0,0,0,.2);
+}
+
+h1 {
+	font-size: 300%;
+}
+
+h2 {
+	font-size: 120%;
+	letter-spacing: 1px;
+	font-weight: 400;
+}
+
+.name {
+	display: inline-block;
+}
+
+.flipIcon {
+	display: inline-block;
+}
+
+/*------ Card Front Section Elements ------*/
+
+section {
+	font-size: 105%;
+	line-height: 23px;
+}
+
+
+section p {
+	margin-top: 23px;
+}
+
+section span {
+	margin-left: 25px;
+}
+
+/*------ Card Front Footer Elements ------*/
+
+footer {
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+	width: 100%;
+	padding: 0 30px;
+	height: 46px;
+	font-size: 105%;
+}
+
+.footer-left-icon,
+.footer-social-icons {
+	display: inline-block;
+}
+
+.footer-left-icon img {
+	margin-right: 10px;
+}
+
+.footer-left-icon span {
+	display: inline-block;
+	margin-top: 3px;
+}
+
+.footer-social-icons img {
+	margin-left: 15px;
+	margin-top: 3px;
+	-webkit-transition: all 0.5s ease, -webkit-transform 0.5s;
+	transition: all 0.5s ease, -webkit-transform 0.5s;
+	transition: transform 0.5s, all 0.5s ease;
+	transition: transform 0.5s, all 0.5s ease, -webkit-transform 0.5s;
+}
+
+.footer-social-icons img:hover {
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+}
+
+
+/*------ Card Back Elements ------*/
+
+.back p {
+	position: absolute;
+	background: rgba(255,255,255,0.6);
+	padding: 5px 10px;
+	color: #6f20d0;
+	left: 10px;
+	bottom: 10px;
+	border-radius: 2px;
+	font-weight: 400;
+}
+
