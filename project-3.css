@@ -12,7 +12,6 @@ body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	margin-top: 30px;
-	margin-left: 30px;
 	color: #fff;
 	font-weight: 300;
 }
@@ -55,7 +54,7 @@ label {
 
 .card {
 	position: relative;
-	width: 630px;
+	max-width: 630px;
 	height: 375px;
 	margin: 0 auto;
 	-webkit-perspective: 1000px;
@@ -182,6 +181,10 @@ footer {
 	display: inline-block;
 }
 
+.footer-social-icons {
+	float: right;
+}
+
 .footer-left-icon img {
 	margin-right: 10px;
 }
@@ -219,3 +222,96 @@ footer {
 	font-weight: 400;
 }
 
+/*------ Media Queries ------*/
+
+@media (max-width: 600px) and (orientation: portrait) {
+
+	body {
+		font-size: 15px;
+	}
+
+	.front, .back {
+		padding: 20px;
+	}
+
+	h1 {
+		font-size: 230%;
+	}
+
+	h2 {
+		font-size: 100%;
+	}
+
+	footer {
+		bottom: 20px;
+		padding: 0 20px;
+	}
+
+	.flipIcon img {
+		width: 30px;
+		height: 19px;
+	}
+
+	.footer-left-icon img {
+		width: 36px;
+		height: 36px;
+	}
+
+	.footer-social-icons img {
+		margin-left: 10px;
+		width: 28px;
+		height: 28px;
+	}
+
+	.footer-social-icons img:hover {
+		-webkit-transform: scale(1.3);
+		transform: scale(1.3);
+	}
+
+}
+
+@media (max-width: 360px) and (orientation: portrait) {
+
+	body {
+		font-size: 13px;
+	}
+
+	.front, .back {
+		padding: 10px;
+	}
+
+	h1 {
+		font-size: 200%;
+	}
+
+	section p {
+		line-height: 22px;
+	}
+
+	section span {
+		display: block;
+		margin-left: 0;
+	}
+
+	footer {
+		bottom: 10px;
+		padding: 0 10px;
+	}
+
+	.flipIcon img {
+		width: 24px;
+		height: 16px;
+	}
+
+	.footer-social-icons img {
+		margin-left: 3px;
+		width: 18px;
+		height: 18px;
+	}
+
+	.footer-left-icon img {
+		width: 30px;
+		height: 30px;
+	}
+
+}
